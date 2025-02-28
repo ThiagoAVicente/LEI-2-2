@@ -20,8 +20,25 @@ Considere um Sistema de Gestão de Stocks de uma empresa. O presente exercício 
 Identify the entities, attributes, and relationships of the database.
 
 ```
-... Write here your answer ...
+Para a nossa solução nós identificamos 7 entidades.
 
+Entidades e seus respetivos atributos:
+
+Produto : código, nome, preço, quantidade em armazém.
+Encomendas: número da encomenda, data de realização.
+Fornecedor: nif, nome, endereço, email.
+Tipo de fornecedor: código de identificação, descrição.
+Condições de pagamento: código de identificação, designação.
+Taxa IVA: código de identificação, designação.
+Empresa.
+
+Relações:
+Empresa     - Produto
+Produto     - Encomendas
+Produto     - Taxa IVA
+Encomendas  - Fornecedor
+Fornecedor  - Tipo de fornecedor
+Fornecedor  - Condições de pagamento
 ```
 
 #### _b)_ Caracterize as relações quanto ao grau, cardinalidade e obrigatoriedade de participação das instâncias das entidades no relacionamento.
@@ -29,7 +46,13 @@ Identify the entities, attributes, and relationships of the database.
 Specify the relationships regarding the degree, cardinality and instances mandatory participation of the entities in the relationship.
 
 ```
-... Write here your answer ...
+As entidades entre "()" são obrigatórias na relação:
+(Empresa)    1 : N Produto
+Produto      N : M (Encomenda)
+(Produto)    N : 1 Taxa IVA
+(Encomenda)  N : 1 Fornecedor
+(Fornecedor) N : 1 Tipo de fornecedor
+(Fornecedor) N : 1 Condições de pagamento
 
 ```
 
