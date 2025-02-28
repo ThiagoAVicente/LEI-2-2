@@ -112,4 +112,4 @@ Considere um Sistema de Gestão de um ATL com as seguintes características:
 
 ### _b)_ [Opcional] Continue a modelar o problema de forma a registar os processos financeiros (mensalidades, atividades, pagamentos, desconto família, etc). Defina os requisitos livremente.
 
-![ex_2_4b!](ex_2_4b.png "AnImage or PDF file")
+![ex_2_4b!](imagens/ex24b.png "AnImage or PDF file")
