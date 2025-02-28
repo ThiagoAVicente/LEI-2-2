@@ -58,7 +58,7 @@ Produto      N : M (Encomenda)
 
 #### _c)_ Desenvolva o desenho conceptual da base de dados com recurso a um diagrama entidade-relacionamento. Numa primeira fase, utilize lápis e papel para realizar o trabalho. Uma vez concluído o desenho em papel, transponha o diagrama para um formato eletrónico utilizando uma ferramenta gráfica como, por exemplo, o Microsoft Visio ou o Visual Paradigm.
 
-![ex_2_1](imagens/ex21c.png)
+![ex_2_1!](ex_2_1.png "AnImage or PDF file")
 
 ### Problema _2.2_
 
@@ -75,7 +75,7 @@ Considere um Sistema de Prescrição Eletrónica de Medicamentos com as seguinte
 
 #### _a)_ Desenvolva o desenho conceptual da base de dados do Sistema de Prescrição Eletrónica de Medicamentos com recurso a um diagrama entidade-relacionamento.
 
-![ex_2_2](ex_2_2.png "AnImage or PDF file")
+![ex_2_2!](ex_2_2.png "AnImage or PDF file")
 
 ### Problema 2.3
 
@@ -108,8 +108,8 @@ Considere um Sistema de Gestão de um ATL com as seguintes características:
 
 #### _a)_ Desenvolva o desenho conceptual da base de dados do Sistema de Informação da Universidade com recurso a um diagrama entidade-relacionamento.
 
-![ex_2_4a!](imagens/ex24a.png)
+![ex_2_4a!](ex_2_4a.png "AnImage or PDF file")
 
 ### _b)_ [Opcional] Continue a modelar o problema de forma a registar os processos financeiros (mensalidades, atividades, pagamentos, desconto família, etc). Defina os requisitos livremente.
 
-![ex_2_4b!](imagens/ex24b.png "AnImage or PDF file")
+![ex_2_4b!](ex_2_4b.png "AnImage or PDF file")
