@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cab96a5d-ea2e-4d13-8eb0-39b140a70795" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/Hello.g4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/Hello.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/Hello.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloLexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloParser$GreetingsContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/HelloParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_01/p3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_02/SuffixCalculatorMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_02/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_03/CalculatorMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_03/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_03/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_04/PrefixCalculatorMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_05/NumbersMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_05/numbers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_05/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_05/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_06/CalculatorMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_06/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_07/Java8Main.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_07/examples/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_08/CalculatorMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_08/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_08/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_08/p3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_08/p4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/CalFracMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/err1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/err2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/err3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/err4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/p6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_09/run" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_10/bd-1.question" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_11/SetCalcMain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/b2_11/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bloco2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/cd2025_guiao1-ThiagoAVicente" beforeDir="false" afterPath="$PROJECT_DIR$/../../CD/cd2025_guiao1-ThiagoAVicente" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PDS" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="b2-idea" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/b2_01/Execute.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2tWqSTn8ebrYmoOuKrdfZzaRDbC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/bin",
+    "settings.editor.selected.configurable": "Errors"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="antlr4-test" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cab96a5d-ea2e-4d13-8eb0-39b140a70795" name="Changes" comment="" />
+      <created>1740478180115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740478180115</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.tokens" />
+  </component>
+</project>
