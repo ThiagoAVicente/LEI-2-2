@@ -1,5 +1,4 @@
 // Generated from SuffixCalculator.g4 by ANTLR 4.13.2
-package b2_02;
 
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

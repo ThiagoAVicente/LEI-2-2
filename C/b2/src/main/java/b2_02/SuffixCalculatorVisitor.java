@@ -1,5 +1,4 @@
 // Generated from SuffixCalculator.g4 by ANTLR 4.13.2
-package b2_02;
 
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -7,7 +6,7 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * This interface defines a complete generic visitor for a parse tree produced
  * by {@link SuffixCalculatorParser}.
  *
- * @param <T> The return type of the visit operation. Use {@link Void} for
+ * @param <T> The return type of the visit operation. Use {@link Execute} for
  * operations with no return type.
  */
 public interface SuffixCalculatorVisitor<T> extends ParseTreeVisitor<T> {

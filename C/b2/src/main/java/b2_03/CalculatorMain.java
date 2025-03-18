@@ -1,5 +1,3 @@
-package b2_03;
-
 import java.io.IOException;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
@@ -23,7 +21,7 @@ public class CalculatorMain {
          if (parser.getNumberOfSyntaxErrors() == 0) {
             // print LISP-style tree:
             // System.out.println(tree.toStringTree(parser));
-            Interpreter2 visitor0 = new Interpreter2();
+            Execute visitor0 = new Execute();
             visitor0.visit(tree);
          }
       }

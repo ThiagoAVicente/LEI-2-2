@@ -1,0 +1,14 @@
+Functional requirements:
+1- The landlord must be able to publish new ads
+2- The system must allow students to find available rooms.
+3- The system must allow students to refine their search for available rooms based on specific criteria
+4- The system must provide a way for users to communicate and share information
+5- The system must keep track of the renter-landlord relationship
+6- The system must allow renters and landlords to give feedback on their experience with each other
+
+Non-Functional requirements:
+1- Only authenticated lanlords and students should be able to access their respective dashboards
+2- A search query must return results quickly
+3- The system must have an intuitive and user-friendly interface
+4- The system must work on multiple operating systems
+5- The plataform must be user-friendly

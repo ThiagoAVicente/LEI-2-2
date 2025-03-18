@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b820831-5477-4158-8917-9d57e1c9b31c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/noInspections.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bloco2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_01/HelloBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_01/HelloBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_01/HelloVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_01/HelloVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Interpreter2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/cd2025_guiao1-ThiagoAVicente" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/notesG1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PDS" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2tgppb96S55beBUGgW8uWqBdXTB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/vcnt/Documents/university/C/b2/src/main/java/b2_08",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/b2_08" />
+      <recent name="$PROJECT_DIR$/src/main/java/b2_06" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/b2_07" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b820831-5477-4158-8917-9d57e1c9b31c" name="Changes" comment="" />
+      <created>1740783755895</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740783755895</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/b2_03/Execute.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/b2_03/Execute.java</url>
+          <line>61</line>
+          <properties class="Execute" method="visitStat">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

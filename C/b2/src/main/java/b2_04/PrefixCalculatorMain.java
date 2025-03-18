@@ -1,4 +1,3 @@
-package b2_04;
 import java.io.IOException;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
@@ -22,7 +21,7 @@ public class PrefixCalculatorMain {
          if (parser.getNumberOfSyntaxErrors() == 0) {
             // print LISP-style tree:
             // System.out.println(tree.toStringTree(parser));
-            Interpreter visitor0 = new Interpreter();
+            Logic visitor0 = new Logic();
             visitor0.visit(tree);
          }
       }

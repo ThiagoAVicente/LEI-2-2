@@ -1,4 +1,3 @@
-package b2_02;
 
 @SuppressWarnings("CheckReturnValue")
 public class Interpreter extends SuffixCalculatorBaseVisitor<String> {

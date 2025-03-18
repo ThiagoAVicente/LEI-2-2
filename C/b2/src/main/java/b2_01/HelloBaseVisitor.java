@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.tree.TerminalNode; // necessário para iterar pelos 
  * which can be extended to create a visitor which only needs to handle a subset
  * of the available methods.
  *
- * @param <T> The return type of the visit operation. Use {@link Void} for
+ * @param <T> The return type of the visit operation. Use {@link Execute} for
  * operations with no return type.
  */
 @SuppressWarnings("CheckReturnValue")

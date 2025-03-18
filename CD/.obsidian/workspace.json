@@ -1,0 +1,171 @@
+{
+  "main": {
+    "id": "e794acf29e91757b",
+    "type": "split",
+    "children": [
+      {
+        "id": "a420983ff1947e50",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b980e186415745a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "CD1-4.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "CD1-4"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8eac9d3c4dda2c69",
+    "type": "split",
+    "children": [
+      {
+        "id": "a6f3e08e459dd38e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91b706e562bd0e1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "43486118ec183a61",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "63fe19040bb6d14c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a9f5ebf1c5fef9b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "9d09e32f0f4f6e4e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b32f825664ea1575",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CD1-4.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CD1-4"
+            }
+          },
+          {
+            "id": "e3eadfe2e99a2c87",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CD1-4.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CD1-4"
+            }
+          },
+          {
+            "id": "c9b166d1b11afc7a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "137cb248bb794a25",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CD1-4.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of CD1-4"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "5b980e186415745a",
+  "lastOpenFiles": []
+}

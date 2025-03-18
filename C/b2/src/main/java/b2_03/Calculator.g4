@@ -7,10 +7,11 @@ stat:
     expr? NEWLINE
     ;
 expr:
+        // sig=('+'|'-')? expr
         expr op = ('*'|'/'|'%') expr
     |   expr op = ('+'|'-') expr
-    |   Integer
-    |   '(' expr ')'
+    |   sig=('+'|'-')? Integer
+    |   sig=('+'|'-')?'(' expr ')'
     ;
 
 // data types

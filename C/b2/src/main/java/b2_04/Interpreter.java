@@ -1,5 +1,3 @@
-package b2_04;
-
 @SuppressWarnings("CheckReturnValue")
 public class Interpreter extends PrefixCalculatorBaseVisitor<String> {
 
@@ -39,9 +37,9 @@ public class Interpreter extends PrefixCalculatorBaseVisitor<String> {
    }
 
    @Override public String visitStat(PrefixCalculatorParser.StatContext ctx) {
-      String res = null;
-      return visitChildren(ctx);
-      //return res;
+      float result = _visitStatHelper(ctx.expr());
+      System.out.printf("= %.2f",result);
+      return null;
    }
 
    @Override public String visitExpr(PrefixCalculatorParser.ExprContext ctx) {
