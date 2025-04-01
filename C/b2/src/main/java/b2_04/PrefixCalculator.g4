@@ -3,7 +3,7 @@ program:
     stat* EOF
     ;
 stat:
-    expr ? NEWLINE
+    expr ?  NEWLINE
     ;
 expr:
     op=('*'|'/'|'+'|'-') expr expr

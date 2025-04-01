@@ -5,46 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b820831-5477-4158-8917-9d57e1c9b31c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/noInspections.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bloco2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_01/HelloBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_01/HelloBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_01/HelloVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_01/HelloVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_02/SuffixCalculatorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/Calculator.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_03/CalculatorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_03/Interpreter2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculatorVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/cd2025_guiao1-ThiagoAVicente" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/notesG1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/block2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculator.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculator.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/Calculator.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/Calculator.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_09/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_09/run" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/b2_10/bd-1.question" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_10/bd-1.question" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/g1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/g2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/src/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/src/protocol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/src/server.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PDS" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +37,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -71,17 +59,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/vcnt/Documents/university/C/b2/src/main/java/b2_08",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vcnt/Documents/university/PDS/lab06&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/b2_08" />
@@ -121,6 +109,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/b2_09/MyFraction.java</url>
+          <line>17</line>
+          <properties class="MyFraction" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/b2_09/MyFraction.java</url>
+          <line>50</line>
+          <properties class="MyFraction" method="div">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
