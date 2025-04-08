@@ -5,6 +5,17 @@ import time
 
 TIMEOUT = 2
 
+@pytest.fixture(scope="session")
+def server():
+    server = pexpect.spawnu("python3 server.py")
+    time.sleep(1)
+
+    assert server.isalive()
+    yield server
+    
+    if server.isalive():
+        server.close()
+
 
 @pytest.fixture
 def foo():
@@ -32,7 +43,9 @@ def bar():
         bar.close()
 
 
-def test_hello(foo, bar):
+def test_hello(server, foo, bar):
+    assert server.isalive()
+
     foo.sendline("Olá Mundo")
 
     bar.expect("Olá Mundo", timeout=TIMEOUT)
@@ -41,7 +54,9 @@ def test_hello(foo, bar):
     foo.expect("Hello World", timeout=TIMEOUT)
 
 
-def test_storm(foo, bar):
+def test_storm(server, foo, bar):
+    assert server.isalive()
+
     foo.sendline("Olá Mundo")
 
     bar.expect("Olá Mundo", timeout=TIMEOUT)
@@ -57,7 +72,9 @@ def test_storm(foo, bar):
     bar.expect("You are awesome!", timeout=TIMEOUT)
 
 
-def test_basic(foo, bar):
+def test_basic(server, foo, bar):
+    assert server.isalive()
+
     foo.sendline("Hello!")
     bar.expect("Hello!", timeout=TIMEOUT)
     bar.sendline("Welcome aboard")
@@ -72,7 +89,9 @@ def test_basic(foo, bar):
     bar.expect("Cya around")
 
 
-def test_extra(foo, bar):
+def test_extra(server, foo, bar):
+    assert server.isalive()
+
     foo.sendline("Hello!")
     bar.expect("Hello!", timeout=TIMEOUT)
     foo.sendline("/join #cd")
@@ -81,7 +100,9 @@ def test_extra(foo, bar):
         bar.expect("no one is here", timeout=TIMEOUT)
 
 
-def test_channels(foo, bar):
+def test_channels(server, foo, bar):
+    assert server.isalive()
+
     foo.sendline("/join #c1")
     bar.sendline("/join #c2")
     foo.sendline("Hello darkness, my old friend")
