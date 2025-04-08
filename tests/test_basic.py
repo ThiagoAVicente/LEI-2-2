@@ -2,19 +2,27 @@
 import pytest
 import pexpect
 import time
+import threading
+
+from src.server import Server
+
 
 TIMEOUT = 2
 
 @pytest.fixture(scope="session")
 def server():
-    server = pexpect.spawnu("python3 server.py")
-    time.sleep(1)
+    """Fixture to start the server in a separate thread."""   
 
-    assert server.isalive()
-    yield server
+    def _server():
+        print("Starting server...")
+        s = Server()
+        s.loop()
+
+    server_thread = threading.Thread(target=_server, daemon=True)
+    server_thread.start()
     
-    if server.isalive():
-        server.close()
+    time.sleep(1)  # Give the server some time to start
+    yield 
 
 
 @pytest.fixture
@@ -44,8 +52,6 @@ def bar():
 
 
 def test_hello(server, foo, bar):
-    assert server.isalive()
-
     foo.sendline("Olá Mundo")
 
     bar.expect("Olá Mundo", timeout=TIMEOUT)
@@ -55,8 +61,6 @@ def test_hello(server, foo, bar):
 
 
 def test_storm(server, foo, bar):
-    assert server.isalive()
-
     foo.sendline("Olá Mundo")
 
     bar.expect("Olá Mundo", timeout=TIMEOUT)
@@ -73,8 +77,6 @@ def test_storm(server, foo, bar):
 
 
 def test_basic(server, foo, bar):
-    assert server.isalive()
-
     foo.sendline("Hello!")
     bar.expect("Hello!", timeout=TIMEOUT)
     bar.sendline("Welcome aboard")
@@ -90,8 +92,6 @@ def test_basic(server, foo, bar):
 
 
 def test_extra(server, foo, bar):
-    assert server.isalive()
-
     foo.sendline("Hello!")
     bar.expect("Hello!", timeout=TIMEOUT)
     foo.sendline("/join #cd")
@@ -101,8 +101,6 @@ def test_extra(server, foo, bar):
 
 
 def test_channels(server, foo, bar):
-    assert server.isalive()
-
     foo.sendline("/join #c1")
     bar.sendline("/join #c2")
     foo.sendline("Hello darkness, my old friend")
