@@ -1,0 +1,21 @@
+group modules;
+
+htmlTable(rows) ::= <<
+\<table border=1>
+<rows; separator="\n">
+\</table>
+>>
+
+htmlRow(cells) ::= <<
+\<tr>
+<cells; separator="\n">
+\</tr>
+>>
+
+htmlCell(content) ::= <<
+\<td><content>\</td>
+>>
+
+htmlHeadCell(content) ::= <<
+\<th><content>\</th>
+>>

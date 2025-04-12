@@ -1,0 +1,12 @@
+Para reselver operações é geralmente usado um conjunto de variáveis que servem para resolver a operação 
+por partes simples. Isto torna o código extenso.
+
+NÃO SER CAPAZ DE INFERIR O NOME DA VARIAVEL REAL A PARTIR DA VARIAVEL NO CODIGO OUTPUT.
+
+Usar 2 visitors para gerar código, o primeiro verifica a lógica ( tipo de dados, formato ) e o segundo serve para
+compilar mesmo
+
+NUNCA usar nomes das variáveis assim como foram passadas no código:
+	- podemos usar um gerador de nomes de variáveis baseado num id estático
+	- podemos adicionar um prefixo ao nome da variavel que sabelo que nunca vai resultar em uma palavra 
+	  reservada da nossa linguagem

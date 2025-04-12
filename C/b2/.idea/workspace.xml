@@ -6,27 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0b820831-5477-4158-8917-9d57e1c9b31c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculator.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_04/PrefixCalculator.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/Calculator.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/Calculator.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_08/CalculatorVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_09/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_09/run" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/b2_10/bd-1.question" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/b2_10/bd-1.question" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/g1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/g2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/src/client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/src/protocol.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CD/src/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/.obsidian/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../CD/.obsidian/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../CD/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/CD1-4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CD/g3" beforeDir="false" afterPath="$PROJECT_DIR$/../../CD/g3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IHC/41549_HCI_LogBookTemplate" beforeDir="false" afterPath="$PROJECT_DIR$/../../IHC/41549_HCI_LogBookTemplate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PDS" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myStudy/PDS_4_Creational_Patterns.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myStudy/PDS_5_Structural_Patterns.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myStudy/PDSteste1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myStudy/creational.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myStudy/estrutural.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,17 +49,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vcnt/Documents/university/PDS/lab06&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/vcnt/Documents/university/C/b2",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/b2_08" />
@@ -82,6 +75,14 @@
       <recent name="" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,8 +91,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740783755895</updated>
+      <workItem from="1744052280823" duration="83000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

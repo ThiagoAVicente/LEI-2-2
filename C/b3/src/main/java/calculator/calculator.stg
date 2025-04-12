@@ -1,0 +1,48 @@
+group modules;
+
+typeValue ::= [
+   "+":"add",
+   "-":"subtract",
+   "*":"multiply",
+   "/":"divide",
+   "%":"remainder"
+]
+
+main(fileName, lines) ::= <<
+import java.math.BigInteger;
+
+public class <fileName> {
+    public static void main(String[] args) {
+        <lines;separator="\n">
+    }
+}
+>>
+
+block(lines) ::= <<
+<lines;separator="\n">
+>>
+
+tempDeclaration(varName,value) ::= <<
+BigInteger <varName> = BigInteger.valueOf(<value>);
+>>
+
+operation(varName, var1, op, var2, block) ::= <<
+<block>
+BigInteger <varName> = <var1>.<typeValue.(op)>(<var2>);
+>>
+
+valueChange(varName,value,block) ::= <<
+<block>
+<varName> = <value>;
+>>
+
+
+declarationCopy(varName, value,block) ::= <<
+<block>
+BigInteger <varName> = <value>;
+>>
+
+print(varName,value,block) ::= <<
+<block>
+System.out.printf("= %d %n",<value>.intValue());
+>>
