@@ -129,6 +129,7 @@ public class Compiler extends myParserBaseVisitor<ST> {
 
       ST response = group.getInstanceOf("print");
       response.add("value", varName);
+      response.add("label", ctx.expr().getText());
       response.add("block",exprResolution.render());
 
       return response;

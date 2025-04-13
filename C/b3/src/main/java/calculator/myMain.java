@@ -49,9 +49,14 @@ public class myMain {
 
          try
          {
-            PrintWriter pw = new PrintWriter(new File("out/"+outputFileName));
-            pw.print(code.render());
-            pw.close();
+             File outDir = new File("out");
+             if (!outDir.exists()) {
+                 outDir.mkdirs();
+             }
+
+             PrintWriter pw = new PrintWriter(new File(outDir, outputFileName));
+             pw.print(code.render());
+             pw.close();
          }
          catch(IOException e)
          {

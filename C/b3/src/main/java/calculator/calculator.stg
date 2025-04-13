@@ -42,7 +42,7 @@ declarationCopy(varName, value,block) ::= <<
 BigInteger <varName> = <value>;
 >>
 
-print(varName,value,block) ::= <<
+print(label,value,block) ::= <<
 <block>
-System.out.printf("= %d %n",<value>.intValue());
+System.out.printf("%s = %d %n","<label>",<value>.intValue());
 >>

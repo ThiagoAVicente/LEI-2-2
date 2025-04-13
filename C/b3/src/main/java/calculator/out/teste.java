@@ -2,16 +2,19 @@ import java.math.BigInteger;
 
 public class teste {
     public static void main(String[] args) {
-        BigInteger var1 = BigInteger.valueOf(1);
-        BigInteger var2 = BigInteger.valueOf(4);
-        BigInteger var3 = var1.add(var2);
-        System.out.printf("= %d %n",var3.intValue());
-        BigInteger var4 = BigInteger.valueOf(1);
-        BigInteger varx = var4;
-        BigInteger var5 = BigInteger.valueOf(123);
+        BigInteger var1 = BigInteger.valueOf(2);
+        BigInteger var2 = BigInteger.valueOf(3);
+        BigInteger var3 = BigInteger.valueOf(4);
+        BigInteger var4 = var2.multiply(var3);
+        BigInteger var5 = var1.add(var4);
         BigInteger vary = var5;
-        BigInteger var6 = BigInteger.valueOf(2);
-        BigInteger var7 = vary.remainder(var6);
-        System.out.printf("= %d %n",var7.intValue());
+        System.out.printf("%s = %d %n","y",vary.intValue());
+        BigInteger var6 = BigInteger.valueOf(1);
+        BigInteger var7 = BigInteger.valueOf(3);
+        BigInteger var8 = var6.add(var7);
+        BigInteger var9 = BigInteger.valueOf(1);
+        var9 = var9.multiply(BigInteger.valueOf(-1));
+        BigInteger var10 = var8.multiply(var9);
+        System.out.printf("%s = %d %n","(1+3)*-1",var10.intValue());
     }
 }
