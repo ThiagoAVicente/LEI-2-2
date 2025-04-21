@@ -22,20 +22,19 @@ block(lines) ::= <<
 <lines;separator="\n">
 >>
 
-tempDeclaration(varName,value) ::= <<
-BigInteger <varName> = BigInteger.valueOf(<value>);
->>
-
 operation(varName, var1, op, var2, block) ::= <<
 <block>
 BigInteger <varName> = <var1>.<typeValue.(op)>(<var2>);
+>>
+
+tempDeclaration(varName,value) ::= <<
+BigInteger <varName> = BigInteger.valueOf(<value>);
 >>
 
 valueChange(varName,value,block) ::= <<
 <block>
 <varName> = <value>;
 >>
-
 
 declarationCopy(varName, value,block) ::= <<
 <block>

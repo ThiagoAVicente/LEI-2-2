@@ -16,5 +16,9 @@ public class teste {
         var9 = var9.multiply(BigInteger.valueOf(-1));
         BigInteger var10 = var8.multiply(var9);
         System.out.printf("%s = %d %n","(1+3)*-1",var10.intValue());
+        BigInteger var11 = BigInteger.valueOf(1);
+        var11 = var11.multiply(BigInteger.valueOf(-1));
+        var11 = var11.multiply(BigInteger.valueOf(-1));
+        System.out.printf("%s = %d %n","--1",var11.intValue());
     }
 }
