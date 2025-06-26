@@ -1,0 +1,191 @@
+-------- Replicação-0
+A replicação é uma tecnica que visa melhorar a performance e confiabilidade de um sistema distribuido. 
+
+Vantagens:
+- confiabilidade: se uma replica falhar basta trocar para outra. Protege contra dados corrompidos.
+- performance: se uma replica estiver sobrecarregada, basta distribuir a carga pelas outras replicas. Ter uma replica próxima do cliente melhora o tempo de resposta mas consome mais largura de banda para manter as replicas atualizadas.
+
+-------- Replicação-1
+
+A replicação por sua vez cria o problema de consistência. COMO QUE TODAS AS RESPLICAS FICAM ATUALIZADAS?
+
+synchronous replication/ tight consistency: Ao realizar uma operação em uma réplica, a operação propaga-se por todas as réplicas antes que as outras operações sejam realizadas. Uma operação é executada em todos os nós como sendo atómica. Isto implica chegar num estado de consenso entre todos os nós oque pode demorar muito tempo ( global synchronization ).
+
+Esta "cura" para o problema de escalabilidade acaba por criar um problema de performance. Em muitos casos o que se faz é relaxar a consistência, ou seja, a sincronização global não é feita de imediato. 
+
+Decidir se é possivel ou não relaxar a consistência é uma questão de trade-off entre performance e confiabilidade que deve ser feita caso a caso levando em conta o proposito para o qual os dados são usados.
+
+--------- Replicação-2: Data-centric consistency models
+
+Data Store [dataStore.png] - pode ser um file system, um banco de dados, etc.
+
+Todos os processos que acessam a data store devem ter uma copia local ou próxima da data store. As operações de escrita, operações que mudam a informação, são propagadas para as outras cópias. 
+
+----- Definição de consistency model
+É um contrato entre a data store e os processos que a acessam. Se os processos seguirem certas regras, a data store irá funcionar corretamente. As operações de leitura devem retornar o resultado da última operação de escrita.
+
+Quando não se tem um relógio global, é dificil decidir qual foi a última operação de escrita. Para resolver isso, é preciso definir um modelo de consistência.
+
+Modelos mais restritos são mais fáceis de usar mas são menos eficientes.
+
+----- Continuous consistency
+3 deviations:
+- in numerical values
+1.podemos definir um limitador da distancia que os valores numericos das replicas podem ter entre si. Com threshold de 0.02, se uma réplica for atualizada e a diferença entre seu valor e os valores das demais réplicas não ultrapassar esse limite, as outras réplicas ainda serão consideradas mutualmente consistentes.
+2.Também pode ser aplicado a nivel do número de operações de atualização que foram aplicadas numa réplica mas ainda não foram vistas pelas outras réplicas.
+
+- imutabilidade relativa / staleness 
+Relacionada com a última vez que a replica foi atualizada. Algumas apps podem tolerar que uma réplica não esteja atualizada desde que a informação não seja muito antiga.
+
+- número e ordem de operações de atualização
+Algumas aplicações permitem que a ordem das operações seja diferente entre as demais réplicas desde que as diferenças sejam limitadas. Uma forma de entender isto é pensar que as operações são aplicadas na réplica local à espera de serem aceites por todas as réplicas. Oque pode acontecer é uma réplica fazer rollbacck e re-aplicar as operações por outra ordem. 
+
+Conit (consistency unit):
+Especifica uma unidade sobre o qual se mede a consistencia.
+Determina onde começa e termina o intervalo dentro do qual há garantia de consistência.
+Uma replica precisa saber qual é a sua diferença para com as outras réplicas, para isso é preciso manter a comunicação entre as réplicas mas essa comunicação é muito mais leve do que a para sincronizar todas as réplicas. 
+É preciso usar protocolos e os programadores precisam especificar os requesitos de consistência da aplicação.
+
+----- Sequencial consistency
+O resultado de qualquer execução é o mesmo se todas as operações fossem executadas pela mesma ordem sequencial.
+
+Coloca-se as operações sobre um eixo temporal. 
+W_i(x)a -> processo P_i escreve a sobre o objeto x.
+R_i(x)b -> processo P_i efetua uma leitura do objeto x e obtém o valor b.
+
+As alterações devem ser aplicadas em todos os processos pela mesma ordem.
+
+----- Casual consistency
+A weaker model than sequential consistency.
+Introduz o conceito de eventos possivelmente relacionados casualmente.
+
+Se o evento B é causado pelo evento A que o antecedeu, então, pela causalidade, todos devem ver o evento A antes do evento B.
+Operações que não estão casualmente relacionadas são tidas como concorrentes.
+
+----- Grouping operations - entry consistency
+Introduz o conceito de critical section que ocorre entre ENTER_CS e LEAVE_CS.
+Dentro dessa seção há garantia que os dados da local store estão atualizados.
+Para garantir que as operações de leitura e escrita não ocorram ao mesmo tempo são usadas locks.
+Um processo que está à espera para fazer um acquire faz um pedido ao nó que está como ownership do lock.
+- exclusive_access: pode ler e escrever
+- nonexclusive_access: pode ler mas não escrever. Só pode ser garantido se nenhum processo tiver o lock de exclusive_access.
+
+O entry consistency model não garante que uma operação de escrita seja imediatamente conhecida pelos outros processos. Garante que, quando quando faço um acquire as informações locais estão atualizadas.
+
+----- Eventual consistency
+Só há um ou um grupo limitado de processos que podem fazer operações de atualização.
+As réplicas são eventualmente atualizadas mas uma operação de leitura pode retornar um valor desatualizado.
+É mais simples de implementar. Confitos do tipo write-write são simples de resolver visto que só há um pequeno número de processos que podem estar envolvidos.
+
+--------- Replicação-3: Client-centric consistency models
+Uma junção da consistência causal e eventual.
+Modelos centrados em manter a consistência de dados a nivel do cliente. 
+
+É fácil de manter se o cliente sempre se conectar com a mesma réplica. O problema surge quando o cliente se conecta a outras réplicas e, então, é preciso encontrar uma forma de manter essa consistência.
+
+----- Monotonic reads
+Se um processo lê um valor de uma réplica, então, todas as leituras subsequentes desse processo devem retornar o mesmo valor ou um valor mais recente.
+
+----- Monotonic writes
+Uma operação de escrita de um processo P sobre o item x é completado antes de qualquer outra operação sucessiva de escrita de P sobre x.
+Operações de escrita de um mesmo processo são efetuadas na ordem em que foram feitas.
+Não é preciso ter o item x atualizado se o processo P vai fazer um overwrites x.
+
+----- Read your writes
+Uma operação de escrita de P sobre o elemento x é completada antes de qualquer operação sucessiva de leitura de P sobre o item x.
+
+----- Writes follow reads
+Qualquer operação de escrita de P sobre o item x é executada sobre o mesmo obtido da última leitura de P sobre x ou sobre o valor mais recente de x.
+
+--------- Replicação-4: Replica management
+
+----- Replica placement
+Precisamos selecionar k localizações dentre as n disponíveis para colocar as k réplicas, com k < n.
+É um problema computacionalmente complexo, então é preciso usar heurísticas.
+1. Selecionar um server por vez e posicioná-lo numa localização que minimize a distância para com os clientes. (caro)
+2. Selecionar o maior SA e posocionar um servidor no router com o maior número de interfaces de rede. Aplicar para o segundo maior SA e assim por diante.(caro)
+3. Posicionar nós num espaço m-dimensional. Identificar as k regioões com maior densidade e, para cada uma, escolher um nó para agir como réplica. (barato)
+
+----- Content replication and placement
+Existem 3 tipos de réplicas:
+1. Permanent replicas: o conjunto inicial de réplicas que formam a data store. 
+
+2. Server-initiated replicas: São cópias da data store que existem para melhorar a performance. São iniciados pelo dono da data store. Serve para diminuir a carga em um servidor e pode não ter todos os ficheiros do server original. Cria-se um threshold para deletion D e para replication R. Se o número de acessos for menor que D o ficheiro pode ser apagado o que reduz o número de réplicas desse ficheiro (o ficheiro não é apagado se for a última cópia). Se o número de acessos for maior que R, então, o ficheiro é replicado para outro servidor. 
+
+### TOCHECK
+O ficheiro F pode ser migrado para o server P se o server Q, que tem o ficheiro, recebe mais de metado do total de pedidos para F. 
+
+3. Client-initiated replicas: initiated by the client. São mais conhecidos como client caches. É usado para armazenar temporáriamente uma cópia dos dados que o cliente pediu.
+
+----- Content distribution
+--- state vs operations
+Escolher oque deve ser propagado.
+3 opções:
+- propagar notificações de atualização:  
+Em invalidation protocols propaga-se uma notificação de que a cópia está desatualizada e que já não é válida. Essa notificação pode expecificar qual a parte da cópia que está desatualizada. Em sistemas onde há muitas operações de escrita e poucas de leitura, esta abordagem pode ser mais eficiente.
+Quando read-to-write ratio é baixo.
+
+- transferir os dados de uma cópia para outra:
+Enviar os dados modificados para as outras cópias. É útil quando há muitas operações de leitura e, consequentemente, há muita possibilidade de que ocorra uma leitura após uma escrita.
+Quando read-to-write ratio é alto.
+
+- propagar a opração de atualização (active replication):
+Em vez de enviar os dados modificados, envia para as outras cópias as operações que devem fazer juntamente dos parametros necessários para a realizar.
+Tem pouco custo de largura de banda mas pode precisar de mais processamento nas réplicas.
+
+--- pull & push
+Um outro problema é saber quando que as atualizações devem ser pulled ou pushed.
+
+Nos server-based protocols (push-based approach) as atualizações são eviadas para as outras réplicas sem que elas tenham que pedir. É muitas vezes usado entre as replicas permanentes e as server-initiated replicas mas também podem ser usadas pelo server para enviar atualizações para os client caches. Esta abordagem é usada quando é preciso garantir uma consistência forte.
+Quando read-to-write ratio é alto.
+
+Nos client-based protocols (pull-based approach) os clientes ou servidores pedem as atualizações a um outro servidor. Usadas em client caches.
+Quando read-to-write ratio é baixo.
+
+PushVsPull [PushVsPull.png]
+
+--- Lease
+É um contrato entre o cliente e o servidor. Neste contrato o servidor garante ao cliente que vai enviar as atualizações drante um periodo de tempo.
+Quando o lease expira, o cliente pode pedir um novo lease ou sondar ao servidor por updates e fazer pull se necessário.
+Promovem um mecanismo para trocar dinamicamente entre estrategias push e pull-based
+
+1. age-based lease: de um objeto que não é alterado há muito tempo, não é esperado que venha a sofrer atualizações no tempos próximos. Então o tempo de lease é longo.
+2. renewal-frequency-based lease: Os clientes que pedem frequentemente um objeto devem ter um tempo de lease maior. 
+3. state-based lease: Quando o servidor vê que está a ficar sobrecarregado, pode reduzir o tempo dos novos leases que dá aos clientes. Assim o servidor guarda a informação de menos clientes. Basicamente o servidor torna-se mais stateless para poder responder eficientemente.
+
+--- multicasting e unicasting
+Um servidor que precisa enviar uma atualização para N outros servidores pode usar unicasting ou multicasting:
+- Unicasting: envia N menssagens, uma para cada servidor.
+- Multicasting: Envia uma menssagem e a rede se encarrega de replicar a menssagem para os outros servidores. 
+Multicasting é geralmente mais eficiente para push-based protocols.
+
+Pull-based protocols envolvem geralmente a comunicação entre um cliente/servidor e outro servidor. Então, o unicasting é mais comum e eficiente.
+
+--------- Replicação-5: consistency protocols
+----- Consistencia continua
+1. limitar o desvio numérico: garantir que o desvio não ultrapassa um certo limite
+2.Limitar o desvio de idade: garantir que não há um atraso de atualização maior que um certo limite
+3. Limitar o desvio de orderns: introduzir um limite no tamanho da fila de tentativa de atualização.
+
+----- Sequential consistency: Primary-based protocols
+Cada item x tem um primário associado. Esse primário é responsável por coordenar as operações de escrita sobre x.
+
+--- Remote-write protocols ( primary-backup protocols ) 
+Operações de leitura são feitas localmente e as operações de escrita são enviadas para o primário. O nó A quer fazer uma atualização sobre o item x que tem como primário o server S. "A" envia a operação de escrita para o primário que a executa e propaga a atualização para as outras réplicas. Quando o primário recebe a confirmação de que todas as réplicas foram atualizadas, ele envia uma confirmação para o nó A.
+Existe uma implementação não bloqueante onde o nó S envia a confirmação assim que atualiza o item x localmente. Isto gera um problema relacionado com a tolerância a falhas visto que não há garantia que algum backup tenha recebido a atualização.
+
+--- Local-write protocols 
+Quando A quer efetuar uma operação de escrita sobre o item x que tem como primário o server S, A move a copia primária para si e efetua a operação de escrita localmente, após isso, A envia a atualização para os backups.
+
+----- Sequential consistency: Replicated-write protocols
+Diferente do protocolos primary-based, não há um primário associado a um item. O que acontece é que as atualizações são realizadas por multiplos servidores.
+
+--- Active replication
+Uma operação em uma réplica é porpagada para as outras. Também pode ser enviada a atualização em si. Uma abordagem é usar um sequenciador ( coordenador central) que atribui um id sequencial às operações. As operações são executadas pela ordem do id sequencial.
+
+--- Quorum-based protocols
+Replicated-writes usando votos.
+A conceito básico é do cliente pedir permição a vários servidores para poder fazer uma operação de escrita ou leitura.
+1. N_R + N_W >N -- read-write
+2. N_W > N/2 -- write-write
+N_W e N_R devem ser determinados de acordo com  a lógica que se quer implementar mas devem obdecer as regras acima.

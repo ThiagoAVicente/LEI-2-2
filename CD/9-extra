@@ -1,0 +1,40 @@
+--------- DOCKER
+Container: isola o ambiente de execução de um ou mais processos.
+• Isolamento/Visibilidade: limitar o que pode ser visto pelos inquilinos (tenants)
+• Controlo de recursos: limitar o consumo de recursos
+• Portabilidade: poder reconstruir o mesmo ambiente em múltiplos hosts
+
+Containers são um conjunto de configurações.
+
+Como construir um container ( docker já abstrai isso ) :
+1. criar namespaces e cgroups
+2. criar um disco virtual 
+3. chroot para o disco virtual
+4. Iniciar o programa a containerizar
+
+
+-------- Cloud computing
+Modelo que permite acesso conveniente a um conjunto de recursos computacionais configuráveis. 
+
+vantagens gerais:
+- pay per use
+
+--- IaaS ( infrastructure as a Service)
+Disponibiliza recursos de computação virtualizados, como servidores, armazenamento e redes. 
+Algumas vantagens:
+    escaláveis
+    seguros
+    fiáveis
+
+--- PaaS (Platform as a Service)
+Abstrai as aplicações dos limites so sistema operativo, infraestrutura e etc.
+Algumas vantagens:
+    Não é precisso configurações de admin
+    Seguro
+
+--- SaaS (Software as a Service) 
+Fornece aplicações prontas a usar, acessíveis através da internet, sem necessidade de instalação local.
+Algumas vantagens:
+    Não é preciso intalar
+    Multi-plataforma
+    

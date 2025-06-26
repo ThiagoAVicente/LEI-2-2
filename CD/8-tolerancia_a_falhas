@@ -1,0 +1,286 @@
+------- Introduction
+1.Availability: Refere-se à propabilidade de um sistema estar operacional e disponível para uso quando necessário.
+
+2.Reliability: Refere-se à capacidade de um sistema de funcionar continuamente sem falhas durante um período específico.
+
+3.Safety: Quando um sistema falha temporariamente não deve causar eventos catastróficos. Capacidade do sistema de não causar catostrófes.
+
+4.Maintainability: Refere-se à facilidade com que um sistema pode ser mantido e reparado após uma falha.
+
+Availability vs Reliability:
+Escolhemos um intervalo [0,t[ e a disponibilidade é a fração média de tempo que o componente C esteve operacional nesse intervalo. 
+A = Mean_Time_To_Failure/Mean_Time_Between_Failures = MTTF/(MTTF+MTTR)
+
+A fiabilidade é a probabilidade condicional estar operacional durante o intervalo sabendo que no instante t=0 o componente C estava operacional.
+
+--- falhas
+
+Criar um sistema confiável está relacionado com tolerar falhas. Tolerar falhas consiste em adicionar ao sistema uma componente que possa mascarar a ocorrência de falhas.
+
+Mas oque é uma falha(failure)??
+É dito que um sistema falhou quando não consegue comprir as suas especificações funcionais.
+Erro    -> parte do estado do sistema que pode levar a uma falha.
+Fault   -> causa do erro.
+
+Fault > Error > Failure 
+
+Tipos de falhas:
+1. Crash fracassado: Para, mas funciona corretamente até parar
+2. Omissões: Falha ao responder a um request. (pode ser na recepção ou envio)
+3. Falha temporal: Responde fora dos limites de tempo
+4. Falha na resposta: A resposta está errada (valor ou transição de estado)
+5. Falha arbitrária: Pode produzir respostas arbitrárias em tempos 
+arbitrários -> é crítico
+
+Falhas arbitrárias podem ser consideradas como maliciosas:
+a. Falhas por omissão: Um componente falha na tomada de decisão que devia ter tomado.
+b. Falhas por comissão: Um componente toma uma decisão que não devia ter tomado.
+Tipicamente um problema de segurança, sendo geralmente impossivel destinguir se é um problema de confiança ou de segurança.
+
+Falhas teminais:
+Em um cenário onde o processo P não recebe uma menssagem do processo Q, podemos considerar duas hipóteses: uma falha terminal ou uma falha por omissão/temporal. Para saber se P pode concluir se Q falhou devemos considerar 2 tipos de sistemas:
+a. Sistemas assíncronos: não se assume nada sobre a velocidade de execução dos processos, nem sobre a entrega de mensagens. Neste caso, P não pode concluir se Q falhou.
+b. Sistemas síncronos: tempos de execução e entrega são especificados. Podemos, neste caso, detetar de forma fiável se Q falhou ou não.
+Na prática não existem sistemas totalmente síncronos. Assumimos que os sistemas são parcialmente síncronos, ou seja, na maior parte do tempo comporta-se como um sistema síncrono mas ocasionalmente, e sem limitação, comportam-se como um sistema assíncrono.
+
+Tipos de falhas terminais:
+1.fail-stop: falha por crash que pode ser detetada fiavelmente.
+2.fail-noisy: falha por crash que é eventualmente detetada. Há um periodo de tempo no qual o processo não pode ser considerado como falhou.
+3.fail-silent: falha por crash ou por omissão. Não há como distinguir entre as duas.
+4.fail-safe: falhas arbitrárias que não causam estrago.
+5.fail-arbitrary: o processo Q falha de uma maneira qualquer. Falhas maliciosas.
+
+--- redundância para mascarar falhas
+Tipos de redundância:
+1. redundância de informação: acrescentar bits extra aos dados para que os erros possam ser recuperados.
+2. redundância de tempo: repetir uma mesma operação caso algo anormal aconteça. Usado para falhas transientes.
+3. redundância física: acrescentar equipamentos de hardware ou processos para permitir que um ou mais componentes falhem sem que o sistema deixe de funcionar. 
+
+------- Resilience process
+----Resilience by process groups
+Para proteger contra a falha de um processo é necessário a criação de um grupo constituido da replica de processos. Os processos podem todos desempenha um mesmo papel, "flat group", ou podem desempenhar papéis diferentes, "hierarchical group".
+Ambos os tipos de grupos têm suas vantagens e desvantagens. Os grupos planos são mais eficientes em lidar com a falha de um processo já que basta outro processo assumir o papel do que falhou, mas a tomada de decisão é mais lenta e complexa já que envolve todos os membros do grupo. Os grupos hierárquicos são mais rápidos na tomada de decisão, mas menos eficientes em lidar com falhas.
+
+----Grupos e máscaras de falha
+Considerando que num grupo todos os processos são iguais e processam comandos pela mesma ordem.
+Um sistema diz-se k-fault tolerant se pode sobreviver a falhas em k componentes. Um grupo k-fault tolerant precisa:
+1. k+1 processos no caso de falhas terminais
+2. 2k+1 processos no caso de falhas arbitrárias. O resultado correto pode ser obtido pela votação.
+
+----Consenso
+---Consenso por flooding
+O algoritmo tem por base rondas e assume que só há falhas do tipo fail-stop
+Um cliente contacta o processo P_i a pedir para que um comando c seja executado. Cada processo P_i tem uma lista de comandos propostos. Na ronda r, P_i envia por multicast o seu conjunto de comandos não executados para os outros. No final de r, cada P_i faz o merge dos comandos recebidos. O próximo comando é selecionado atravês de uma função deterministica partilhada globalmente.
+No caso de um processo falhar mas já ter enviado o comando para um dos nós, os outros abstêm-se de tomar uma decisão nessa ronda porque notam que um processo falhou.
+
+Este algoritmo não é muito realista pelo facto de assumir que só há falhas do tipo fail-stop. Um cenário mais realista é o de assumir fail-nosy.
+
+---Consenso realista: paxos
+Assunções (fracas e realistas):
+a.Sistema parcialmente síncrono.
+b.Menssagens podem ser perdidas, duplicadas ou entregues fora de ordem ( comunicação instável).
+c.Menssagens corrompidas podem ser detectadas.
+d.As operações são determinísticas.
+e.Processos podem falhar por crash mas não podem falhar arbitrariamente.
+f.Os processos não podem conspirar ( falhas independentes, não há coordenação maliciosa).
+
+3 roles:
+proposers: propose values
+acceptors: contribute to reach concensus by accepting values
+learners: learn the aggred value
+One node can have multiple roles, or even all roles.
+A node must know how many acceptors the majority is.
+A node can't forget what he accepted.
+A paxus run aims at reaching a single consensus and the it cannot be undone without a new run.
+
+!! O cliente pode ser um proposer mas não pode participar no processo de consenso ( como learner ou acceptor).
+
+3k+1 processes to reach consensus within k arbitrary failures. Funciona da seguinte forma: Um nó primário envia uma menssagem com um valor para os backups. Os backups recebem o valor e enviam para os outros backups. Armazenam o valor que foi concordado pela maioria.
+Requesitos:
+1.Todos os backups que não estejam a falhar armazenam o mesmo valor.
+2.Se o primário não estiver a falhar, todos os backups armazenam o mesmo valor do primário.
+
+---Limitações da tolerância a falhas
+A tolerância a falhas não acontece por si só, requer uma troca de várias menssagens entre os processos e, portanto, leva a uma queda de performance.
+
+--- Quando é necessário chegar a consenso?
+3 Requesitos:
+1. Os processos produzem o mesmo resultado
+2. Todos os resultados são válidos
+3. Todos os processos, eventualmente, produzem um resultado
+
+Algumas situações: eleger um coordenador, decidir se pode ou não fazer commit de um transação.
+
+CasosPossiveisDeConsendo[casosPossiveisDeConsendo.png]
+
+--- Consistência, disponibilidade e particionamento
+consistência -> safety property
+disponibilidade -> liveness property
+
+CAP theorem: qualquer sistema distribuido que forneça dados compartilhados só pode garantir dois das três seguintes propriedades:
+C- consistency, up-to-date copies
+A- availability, updates will be eventually executed
+P- partition tolerance
+O teorema foca-se em tentar alcançar um equilibrio entre safety e liveness, ou seja, entre consistência e disponibilidade.
+Quando é detetado uma partição o sistema deve prosseguir de forma a manter a consistência ou a disponibilidade. 
+
+--- Deteção de falhas
+a.Quando há garantia que a comunicação entre os nós é frequente podemos detetar falhas só considerando isso.
+b.O processo P sonda periodicamante o processo Q. Se P não recebe resposta de Q, assume que Q está sobre suspeita de falha.
+
+Num sistema sincrono podemos assumir que se P não recebe resposta de Q num intervalo de tempo t, Q falhou.
+
+Na prática: Os processos enviam periodicamente uma menssagem de heartbeat. Se um processo não recebe a menssagem de outro processo num intervalo de tempo t, assume que o outro Q é suspeito de falha. Se Q posteriormente enviou uma menssagem de heartbeat, P deixa de suspeitar de Q e aumenta o intervalo de tempo t.
+
+--- RPC 
+O rpc permite esconder a comunicação fazendo com que chamadas remotas pareçam chamadas locais. client-server
+
+Classes de falhas que podem ocorrem em rpc:
+1. O cliente não consegue localizar o servidor.
+Todos os servidores podem estar down (por exemplo).
+Abordagens:
+a. O erro causa um exceção -> perde transparência e quebra a ilusão de chamada remota. Nem todas as linguagens de programação suportam exceções ou sinais.
+
+2. O pedido do cliente ao servidor é perdido.
+Solução: manter um timer ao enviar o pedido. Se o timer expirar antes de se obter uma resposta, o cliente reenvia o pedido.
+
+3. O servidor crash repois de receber o pedido do cliente.
+Abordagens:
+    a. at-least-once semantics: O cliente espera o server fazer reboot ( ou o middleware troca para outro servidor) e tenta novamente. Repete o processo até obter uma resposta.
+    b. at-most-once semantics: O cliente desiste logo e reporta a falha garantindo que o server execute o pedido no máximo uma vez ou, possivelmente, nenhuma vez.
+    c. garantee nothing: quando o servidor crasha o cliente não sabe o que aconteceu. É fácil de implementar.
+    O ideal seria uma semântica de exactly-once, mas é impossível de garantir.
+    
+    É impossivel recuperar uma falha de servidor de forma transparente. Vejamos só:
+    Existem 3 eventos distintos do servidor:
+    M- envio de uma menssagem completa
+    P- Completa o processamento de um documento
+    C-crash
+    Estes 6 eventos podem acontecer em 6 diferentes ordens.
+    A possibilidade da falha de servidor muda completamente a natureza de um RPC e mostra as diferencças entre sistemas single-processor e sistemas distribuídos. Na maioria dos casos uma crash de servidor implica um crash do cliente, ou seja, não é possivel e nem necessário recuperar.
+    
+4. A resposta do servidor ao cliente é perdida.
+O cliente repara que não recebeu a resposta mas não sabe o porquê. A solução obvia é reenviar o pedido.
+Certas operações podem ser repetidas sem problemas. Essas operações são chamadas de idempotentes.
+
+    1.Uma forma de soluciona ro problema é estruturar todos os pedidos de forma idempotente. Mas se pensarmos em um sistema bancário, por exemplo, há operações que não são idempotentes.
+    
+    2. Outra forma é associar um número sequencial a cada pedido. O servidor ao receber o pedido pode verificar se este é uma retransmissão ou um novo pedido. Esta solução implica o servidor manter, por tempo indeterminado, informação sobre cada cliente.
+    
+    3. Manter um bit na menssagem que indica ao servidor se é uma retransmissão ou não. O servidor pode então decidir como lidar com a menssagem.
+
+5. O cliente crasha depois de enviar o pedido ao servidor.
+Isto deixa um "orfão" já que nenhum processo está à espera do seu resultado.
+Os orfãos são problemáticos :^):
+    a. gastam processamento
+    b. podem bloquear ficheiros ou recursos
+    c. Pode causar confusão no caso do cliente fazer um reboot e reenviar o pedido.
+    
+Soluções:
+    1. Orphan extermination: O cliente, antes de usar um RPC, escreve um log que é salvo em disco. Depois do reboot, o cliente lê o log e elimina os orfãos. Isto não é eficiente por necessitar escrita em disco para cada chamada RPC.
+    
+    2. Reincarnation: O tempo é dividido seuqnciamente em épocas. Sempre que o cliente inicia, faz um broadcast a indicar o inicio de um novo epoch. Assim o servidor mata os orfãos do cliente.
+    
+    2.5 ( less important) . Gentle reincarnation: quando o servidor recebe um epoch vai veridicar se tem algum rpc a ser executado. Se tiver, vai tentar localizar o dono e se não encontrar o dono mata o orfão.
+    
+    4. Expiration: Cada RPC tem um tempo de vida T. Se não conseguir terminar a tempo deve pedir por mais tempo. Quando o tempo T expira, o servidor mata essa execução.
+    
+Na prática estas soluções são brutas, indesejáveis e podem levar a resultados inesperados. HAHAHAHHAHAHAHAHAH
+
+------- Comunicação em grupo fiável
+A comunicação é fiável quando se pode garantir que a mensagem é recebida 
+e subsequentemente entregue por todos os membro do grupo não em falha.
+
+A comunicação em grupo geralmente é feita usando multicast mas o multicast não suporta protocolos fiáveis como TCP. A solução passa por ter um middleware de gestão de grupos. 
+A comunicação fiável em grupo não é fácil de desenvolver. É necessário um acordo para saber qual é o grupo antes da menssagem ser entregue.
+
+--- Comunicação fiável e simples
+Uma abordagem relativamente simples é fazer com que os receptores enviem uma menssagem de ACK para o servidor. O servidor pode manter um histórico de mensagens permitindo ao cliente, quando se apercebe que não recebeu uma menssagem, receber essa menssagem.
+Problemas:
+    Pode "entupir" o servidor com ACKs.
+    O histórico pode ser perdido no caso de crash do servidor.
+    
+------- Commit distribuido
+Envolve a execução de uma operação por todos os processos de um grupo ou por nenhum deles ( atomicidade ).
+Pode recorrer ao multicast fiável ou a uma transação distribuida.
+
+--- Protocolo 2PC
+O cliente que inicia a computação age como coordenador e os restantes como participantes.
+Execução:
+    1. O coordenador envia um VOTE-REQUEST para todos os participantes.
+    2. Os participantes respondem com VOTE-COMMIT ou VOTE-ABORT.
+    3. O coordenador envia GLOBAL-COMMIT ou GLOBAL-ABORT dependendo dos votos recebidos.
+    4. Os participantes agem de acordo com a decisão do coordenador
+Participante falha:
+    Quando um commit distribuído é necessário, ter participantes que 
+    usam um workspace temporário para guardar resultado permite uma 
+    recuperação na presença de falhas.
+    ParticipanteFalha[participanteFalha.png]
+Coordenador falha:
+    Para um participante P no estado READY, definir um tempo máximo t
+    para esperar uma decisão do coordenador. P deverá descobrir o que 
+    os outros participantes conhecem.
+    • Um participante não pode decidir localmente, depende sempre dos 
+    outros processos (eventualmente em falha) 
+    
+------- Recuperação de falhas
+Voltar a um estado sem falhas.
+a. forward error recovery: encontrar um estado sem falhas e continuar a partir daí.
+b. backward error recovery: voltar a um estado anterior sem falhas e continuar a partir daí.
+
+O backward error recovery é mais comum e é feito através de pontos de recuperação ( recovery points).
+Em um sistema distibuido é mais complicado pelo facto dos processos precisarem de cooperar para encontrar um estado consistente.
+
+----- Recuperação de estado consistente
+requesito: ACK para mostrar que a menssagem foi recebida.
+recovery line: assumindo que os processos fazem checkpoint regularmente, é a coleção de checkpoints consistentes mais recente.
+
+--- checkpoint coordenado 
+Deve ser bloqueante para garantir que o estado no inicio da comunicação é o mesmo que o estado no final da comunicação.
+execução:
+1. coordenador envia um checkpoing request.
+2. os participantes fazem o checkpoint e enviam um ACK.
+3. Ao receber todos os ACKs, o coordenador envia um checkpoint done.
+Assumptions: após um "checkpoint done", é criada uma nova recovery line.
+
+--- reversão em cascata
+Imaginando que os checkpoints sejam feitos nos instantes errados. Na procura de uma recovery line, os processos vão fazer rollback até o estado salvo mais recente, se isso não formar um estado consistente, o processo vai fazer rollback até o estado salvo mais recente, e assim sucessivamente. O efeito domino.
+
+--- checkpoints independentes
+Guardar as dependencias dos checkpoints para que se possa fazer rollback para um estado consistente.2
+    CP_i(m) o mº checkpoint do processo P_i.
+    INT_i(m) intervalo entre CP_i(m-1) e CP_i(m).
+    lore:
+        quando P_i envia uma menssagem dentro do intervalo INT_i(m), o processo P_j que recebe a menssagem e guarda a dependência INT_i(m) -> INT_j(n)
+        Essa dependencia é guardada na local storage junto do resto da informação de P_j.
+        
+        Se P_i precisar fazer rollback para CP_i(m-1), P_j também tem que fazer rollback para, pelo menos, CP_j(n-1) por causa da dependência INT_i(m) -> INT_j(n).
+
+--- registo de menssagens ( logging ) 
+O processo de checkpointing pode ser muito caro, então foram criadas técnicas para reduzir o número de checkpoints necessários. Uma dessas técnicas é o logging. 
+Podemos voltar a um estado consistente sem precisar de restaurar o estado da local storage. Assume-se um checkpoint como ponto de partida e retransmite-se as messagens descritas no log.
+
+Assume-se um modelo de execução à peça e deterministico. Neste modelo a execução de cada processo é uma sequencia de estados intervalados. Cada estado começa por um evento não deterministico mas a execução do intervalo é deterministico.
+
+Se registarmos os eventos não determinísticos (para repetir mais tarde), 
+obtemos um modelo de execução determinístico que nos permite repetir 
+tudo de forma completa.
+
+No registo de menssagens devemos evitar processos orfãos.
+Processo orfão: processo que sobrevive ao crash de outro Q mas o estado se torna inconsistente com o estado de Q depois de recuperação. Isto ocorre pelo mau registo do log.
+
+--- Characterizing message-logging schemes
+Notações:
+    - DEP(m): processos aos quais foram entregues a menssagem m + processos para os quais m* foi entregue se m* é dependente da entrega de m.
+    - COPY(m): processos que têm uma cópia de m mas não armazenaram ainda de forma fiável.
+    - FAIL: conjuntos de processos que falharam.
+    
+Baseado nas notações, um processo Q é orfão se existe uma menssagem m tal que Q pertence a DEP(m) e todos os processos de COPY(m) falharam:
+    Q is orphaned ⇔ ∃m : Q ∈ DEP(m) and COPY(m) ⊆ FAIL
+{In other words, an orphan process appears when it is dependent on m, but there
+is no way to replay m’s transmission.}
+
+Para evitar orfãos existem 2 abordagens:
+1. Protocolo pessimista: garante que cada menssagem instável é enviada a, no máximo, um processo P. P então torna-se dependente de m e guarda uma cópia de m. Nisto P não pode enviar nenhuma menssagem sem garantir que m foi fiavelmente guardado na storage.
+
+2. Protocolo otimista: Todo o processo é realizado depois do crash. Assumindo que todos os processos pertencente a COPY(m) falhram, esta abordagem assume que os orfãos possam fazer rollback até um ponto onde já não sejam dependentes de m.
