@@ -1,0 +1,8 @@
+-- Ficheiro Inventado
+-- Exemplo de como poderia ser o ficheiro p4.txt
+
+a := [9,6,3];
+print a;
+while head a do: a := a - [3,2,1]; 
+print a; end; -- deve imprimit [9,6,3], depois [6,4,2], depois [3,2,1] e finalmente [0,0,0]
+print [10];
