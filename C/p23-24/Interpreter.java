@@ -77,7 +77,7 @@ public class Interpreter extends TupleLangBaseVisitor<ArrayList<Double>> {
             continue;
          }
 
-         res.add(op2.get(c));
+         res.add(mult*op2.get(c));
 
       }
 
